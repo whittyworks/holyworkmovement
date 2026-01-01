@@ -10,15 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
     <style>
         :root {
-            --burgundy: #6B2737;
-            --deep-burgundy: #4A1A26;
-            --gold: #C7A572;
-            --warm-gold: #D4AF78;
-            --cream: #FAF7F2;
+            --coral: #FF7B6B;
+            --purple: #B84FFF;
+            --bright-blue: #00B4FF;
+            --deep-purple: #8B3FD9;
             --warm-white: #FFFEF9;
+            --cream: #F8F9FA;
             --charcoal: #2C2C2C;
             --soft-gray: #6B6B6B;
-            --light-gray: #E8E4DB;
+            --light-gray: #E8E4E8;
         }
 
         * {
@@ -61,12 +61,13 @@
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--burgundy);
-            text-decoration: none;
-            letter-spacing: 0.5px;
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -89,13 +90,13 @@
             bottom: -4px;
             left: 0;
             width: 0;
-            height: 1px;
-            background: var(--gold);
+            height: 2px;
+            background: linear-gradient(90deg, var(--purple), var(--bright-blue));
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--burgundy);
+            color: var(--purple);
         }
 
         .nav-links a:hover::after {
@@ -112,7 +113,7 @@
         .mobile-menu span {
             width: 25px;
             height: 2px;
-            background: var(--burgundy);
+            background: var(--purple);
             transition: 0.3s;
         }
 
@@ -123,7 +124,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--burgundy) 0%, var(--deep-burgundy) 100%);
+            background: linear-gradient(135deg, var(--coral) 0%, var(--purple) 50%, var(--bright-blue) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -140,8 +141,8 @@
                     45deg,
                     transparent,
                     transparent 10px,
-                    rgba(199, 165, 114, 0.03) 10px,
-                    rgba(199, 165, 114, 0.03) 20px
+                    rgba(255, 255, 255, 0.03) 10px,
+                    rgba(255, 255, 255, 0.03) 20px
                 );
             pointer-events: none;
         }
@@ -178,7 +179,8 @@
 
         .hero h1 strong {
             font-weight: 600;
-            color: var(--warm-gold);
+            color: var(--warm-white);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
@@ -199,22 +201,22 @@
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
-            background: var(--gold);
-            color: var(--deep-burgundy);
+            background: var(--warm-white);
+            color: var(--purple);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.1rem;
-            border-radius: 2px;
+            border-radius: 50px;
             transition: all 0.3s ease;
-            border: 1px solid var(--gold);
+            border: 2px solid var(--warm-white);
             letter-spacing: 0.5px;
         }
 
         .cta-button:hover {
             background: transparent;
-            color: var(--warm-gold);
+            color: var(--warm-white);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* Section Styles */
@@ -228,7 +230,10 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 3rem;
             font-weight: 500;
-            color: var(--burgundy);
+            background: linear-gradient(135deg, var(--purple) 0%, var(--bright-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
             text-align: center;
         }
@@ -265,13 +270,13 @@
             left: 0;
             width: 4px;
             height: 0;
-            background: var(--gold);
+            background: linear-gradient(180deg, var(--coral), var(--purple), var(--bright-blue));
             transition: height 0.4s ease;
         }
 
         .program-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(107, 39, 55, 0.15);
+            box-shadow: 0 20px 40px rgba(184, 79, 255, 0.2);
         }
 
         .program-card:hover::before {
@@ -282,7 +287,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
             font-weight: 600;
-            color: var(--burgundy);
+            color: var(--purple);
             margin-bottom: 1.5rem;
         }
 
@@ -293,7 +298,7 @@
         }
 
         .program-link {
-            color: var(--burgundy);
+            color: var(--purple);
             text-decoration: none;
             font-weight: 500;
             display: inline-flex;
@@ -332,13 +337,14 @@
         .commitment-card {
             background: var(--warm-white);
             padding: 2.5rem;
-            border-left: 3px solid var(--gold);
+            border-left: 3px solid;
+            border-image: linear-gradient(180deg, var(--coral), var(--purple), var(--bright-blue)) 1;
         }
 
         .commitment-card h4 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            color: var(--burgundy);
+            color: var(--purple);
             margin-bottom: 1rem;
         }
 
@@ -357,7 +363,7 @@
             content: '✦';
             position: absolute;
             left: 0;
-            color: var(--gold);
+            color: var(--purple);
         }
 
         /* Form Styles */
@@ -394,13 +400,13 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--burgundy);
+            border-color: var(--purple);
         }
 
         .submit-button {
             width: 100%;
             padding: 1.2rem;
-            background: var(--burgundy);
+            background: linear-gradient(135deg, var(--purple) 0%, var(--bright-blue) 100%);
             color: var(--warm-white);
             border: none;
             font-family: 'Questrial', sans-serif;
@@ -409,12 +415,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             letter-spacing: 0.5px;
+            border-radius: 4px;
         }
 
         .submit-button:hover {
-            background: var(--deep-burgundy);
+            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--purple) 100%);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(107, 39, 55, 0.3);
+            box-shadow: 0 8px 30px rgba(184, 79, 255, 0.4);
         }
 
         /* Our Story */
@@ -432,8 +439,8 @@
 
         /* Footer */
         footer {
-            background: var(--deep-burgundy);
-            color: rgba(255, 254, 249, 0.8);
+            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--bright-blue) 100%);
+            color: rgba(255, 254, 249, 0.9);
             padding: 3rem 2rem 2rem;
             text-align: center;
         }
@@ -446,7 +453,7 @@
         .footer-tagline {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            color: var(--warm-gold);
+            color: var(--warm-white);
             margin-bottom: 1rem;
             font-style: italic;
         }
@@ -470,12 +477,12 @@
         }
 
         .footer-links a:hover {
-            color: var(--warm-gold);
+            color: var(--warm-white);
         }
 
         .copyright {
             padding-top: 2rem;
-            border-top: 1px solid rgba(199, 165, 114, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 0.9rem;
         }
 
@@ -539,7 +546,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">HolyWork Movement</a>
+            <a href="#home"><img src="hwm-logo.png" alt="HolyWork Movement" class="logo"></a>
             <div class="mobile-menu" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
